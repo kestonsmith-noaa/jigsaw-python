@@ -105,7 +105,8 @@ def project(mesh, proj, sign):
 
                 SPOW = np.sqrt(SCAL)
 
-                mesh.power = mesh.power * SPOW
+    # causes memory allocation of 10+ TB               mesh.power = mesh.power * SPOW
+                mesh.power = mesh.power[:,0] * SPOW
 
     elif (kind == "euclidean-grid" or
           kind == "ellipsoid-grid"):
